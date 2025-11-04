@@ -14,7 +14,7 @@ public class Main {
         while (continueCalculating) {
             try {
                 System.out.println();
-                System.out.println("Виберіть операцію:");
+                System.out.println("Виберіть операцію");
                 System.out.println("0. Вихід");
                 System.out.println("1. Додавання");
                 System.out.println("2. Віднімання");
@@ -23,46 +23,45 @@ public class Main {
                 System.out.println();
                 System.out.print("Що обираєте? ");
 
-                int choice = scanner.nextInt();
-                double number1 = 0, number2 = 0, result = 0;
+                int userChoice = scanner.nextInt();
+                double result = 0;
 
-                if (choice >= 1 && choice <= 4) {
+                if (userChoice == 0) {
+                    System.out.println("Виконання програми завершено!");
+                    break;
+                } else if (userChoice >= 1 && userChoice <= 4) {
                     System.out.print("Введіть перше число: ");
-                    number1 = scanner.nextDouble();
+                    double number1 = scanner.nextDouble();
                     System.out.print("Введіть друге число: ");
-                    number2 = scanner.nextDouble();
+                    double number2 = scanner.nextDouble();
 
-                    switch (choice) {
+                    switch (userChoice) {
                         case 1:
                             result = calculator.addition(number1, number2);
-                            System.out.println("Результат додавання - " + result);
+                            System.out.println("Результат додавання -> " + result);
                             break;
                         case 2:
                             result = calculator.subtract(number1, number2);
-                            System.out.println("Результат віднімання - " + result);
+                            System.out.println("Результат віднімання -> " + result);
                             break;
                         case 3:
                             result = calculator.multiply(number1, number2);
-                            System.out.println("Результат множення - " + result);
+                            System.out.println("Результат множення -> " + result);
                             break;
                         case 4:
                             result = calculator.divide(number1, number2);
-                            System.out.println("Результат ділення - " + result);
-                            break;
-                        default:
-                            System.out.println("Введено некоректне значення!");
+                            System.out.println("Результат ділення -> " + result);
                             break;
                     }
-                } else if (choice == 0) {
-                    System.out.println("Виконання програми завершено!");
-                    break;
+                } else {
+                    System.out.println("Введено некоректне значення!");
                 }
             } catch (ArithmeticException arithmeticException) {
-                System.out.println(arithmeticException.getMessage());
+                System.out.println("Сталася помилка: " + arithmeticException.getMessage());
             } catch (InvalidInputException invalidInputException) {
-                System.out.println(invalidInputException.getMessage());
+                System.out.println("Сталася помилка: " + invalidInputException.getMessage());
             } catch (InputMismatchException inputMismatchException) {
-                System.out.println("Введено некоректні дані для вибору операції!");
+                System.out.println("Введено некоректні дані!");
                 scanner.nextLine();
             } catch (Exception exception) {
                 System.out.println("Сталася помилка: " + exception.getMessage());

@@ -2,8 +2,7 @@ package com.project;
 
 public class Calculator {
     public double addition(double number1, double number2) throws InvalidInputException {
-        if (Double.isNaN(number1) || Double.isNaN(number2)
-                || Double.isInfinite(number1) || Double.isInfinite(number2)) {
+        if (Double.isNaN(number1) || Double.isNaN(number2) || Double.isInfinite(number1) || Double.isInfinite(number2)) {
             throw new InvalidInputException("Некоректні вхідні дані для додавання!");
         }
 
