@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
+
         Scanner scanner = new Scanner(System.in);
         boolean continueCalculating = true;
 
@@ -37,19 +37,19 @@ public class Main {
 
                     switch (userChoice) {
                         case 1:
-                            result = calculator.addition(number1, number2);
+                            result = Calculator.addition(number1, number2);
                             System.out.println("Результат додавання -> " + result);
                             break;
                         case 2:
-                            result = calculator.subtract(number1, number2);
+                            result = Calculator.subtract(number1, number2);
                             System.out.println("Результат віднімання -> " + result);
                             break;
                         case 3:
-                            result = calculator.multiply(number1, number2);
+                            result = Calculator.multiply(number1, number2);
                             System.out.println("Результат множення -> " + result);
                             break;
                         case 4:
-                            result = calculator.divide(number1, number2);
+                            result = Calculator.divide(number1, number2);
                             System.out.println("Результат ділення -> " + result);
                             break;
                     }
@@ -69,7 +69,5 @@ public class Main {
                 System.out.println("Обробка запиту завершена!");
             }
         }
-
-        scanner.close();
     }
 }
