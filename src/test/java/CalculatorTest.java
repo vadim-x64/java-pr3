@@ -1,10 +1,10 @@
 import com.project.Calculator;
 import com.project.InvalidInputException;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CalculatorTest {
-
+class CalculatorTest {
     @Test
     void testAddition_ValidInput() throws InvalidInputException {
         assertEquals(8.0, Calculator.addition(5, 3));
